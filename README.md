@@ -13,3 +13,7 @@
 
 
 # Learning GCP FlaskWithFireStore
+
+I am using [tutorial](https://medium.com/google-cloud/building-a-flask-python-crud-api-with-cloud-firestore-firebase-and-deploying-on-cloud-run-29a10c502877)
+
+Project in firebase: **PTFlaskWithFirebase**
