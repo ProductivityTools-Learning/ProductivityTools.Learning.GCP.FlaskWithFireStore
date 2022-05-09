@@ -26,3 +26,5 @@ Invoke-WebRequest -Uri http://127.0.0.1:8080/list
 ```
 Invoke-WebRequest -Uri http://127.0.0.1:8080/add -Method Post -Body (@{id='1';X='x1'}|ConvertTo-Json) -ContentType application/json
 ```
+
+https://leancode.co/blog/why-firestore-firebase-pros-cons-reasons-to-love-it-part-i
