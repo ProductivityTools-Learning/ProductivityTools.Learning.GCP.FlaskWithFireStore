@@ -11,4 +11,23 @@ todos=db.collection('todos')
 
 @app.route('/add',methods=['POST'])
 def create():
-    
+    try:
+        id=request.json['id']
+        todos.document(id).set(request.json)
+        return jsonify({"sucess":True}),200
+    except Exception as e:
+        return f"An error occured {e}"
+
+@app.route('/list',methods=['GET'])
+def read():
+    try:
+        todo_id=request.args.get('id')
+        if todo_id:
+            todo=todos.document(todo_id).get();
+            return jsonify(todo.to_dict()),200
+        else
+            all_todos=[doc.to_dict() for doc in todos.stream()]
+            return jsonify(all_todos),200
+    except Exception as e:
+        return f"An error occured {e}"
+
