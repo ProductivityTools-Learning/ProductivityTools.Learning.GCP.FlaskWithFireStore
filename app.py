@@ -25,9 +25,12 @@ def read():
         if todo_id:
             todo=todos.document(todo_id).get();
             return jsonify(todo.to_dict()),200
-        else
+        else:
             all_todos=[doc.to_dict() for doc in todos.stream()]
             return jsonify(all_todos),200
     except Exception as e:
         return f"An error occured {e}"
 
+port = int(os.environ.get('PORT', 8080))
+if __name__ == '__main__':
+    app.run(threaded=True, host='0.0.0.0', port=port)

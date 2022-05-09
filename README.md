@@ -16,4 +16,13 @@
 
 I am using [tutorial](https://medium.com/google-cloud/building-a-flask-python-crud-api-with-cloud-firestore-firebase-and-deploying-on-cloud-run-29a10c502877)
 
-Project in firebase: **PTFlaskWithFirebase**
+Project in firebase: **PTFlaskWithFirebase** I placed database in europe-west2
+
+Requests
+```
+Invoke-WebRequest -Uri http://127.0.0.1:8080/list
+```
+
+```
+Invoke-WebRequest -Uri http://127.0.0.1:8080/add -Method Post -Body (@{id='1';X='x1'}|ConvertTo-Json) -ContentType application/json
+```
